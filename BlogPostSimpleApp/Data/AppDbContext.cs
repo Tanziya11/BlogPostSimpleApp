@@ -7,6 +7,7 @@ public class AppDbContext : DbContext
     public DbSet<BlogType> BlogTypes { get; set; }
     public DbSet<PostType> PostTypes { get; set; }
     public DbSet<User> users { get; set; }
+    public DbSet<Status> Statuses { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     =>
    options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=BlogDb;Trusted_Connection = True;");
@@ -30,6 +31,13 @@ public class AppDbContext : DbContext
         .WithMany(b => b.Posts)
         .HasForeignKey(p => p.BlogId)
         .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<Blog>(entity =>
+        {
+            entity.HasOne(b => b.Status)
+                  .WithMany(s => s.Blogs)
+                  .HasForeignKey(b => b.StatusId);
+        });
 
         modelBuilder.Entity<User>(entity =>
         {
