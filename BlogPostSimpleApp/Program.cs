@@ -41,24 +41,39 @@ class Program
         //    context.Posts.AddRange(type1, type2);
         //    context.SaveChanges();
         //}
-        if (!context.Statuses.Any())
-        {
-            var type1 = new Status { StatusCode= 1, Name = "Food", Description = "Food Blog" };
-            var type2 = new Status { StatusCode = 2, Name = "Car", Description = "Car Blog" };
-            var type3 = new Status { StatusCode = 3, Name = "Animals", Description = "Animals Blog" };
-            var type4 = new Status { StatusCode = 4, Name = "Family", Description = "Family Blog" };
-            var type5 = new Status { StatusCode = 5, Name = "Computer", Description = "Computer Blog" };
-            var type6 = new Status { StatusCode = 6, Name = "Movies", Description = "Movies Blog" };
-            var type7 = new Status { StatusCode = 7, Name = "Phones", Description = "Phones Blog" };
-            var type8 = new Status { StatusCode = 8, Name = "Friend", Description = "Friend Blog" };
-            var type9 = new Status { StatusCode = 9, Name = "School", Description = "School Blog" };
-            var type10 = new Status { StatusCode = 10, Name = "College", Description = "College Blog" };
+        //if (!context.Statuses.Any())
+        //{
+        //    var type1 = new Status { StatusCode= 1, Name = "Food", Description = "Food Blog" };
+        //    var type2 = new Status { StatusCode = 2, Name = "Car", Description = "Car Blog" };
+        //    var type3 = new Status { StatusCode = 3, Name = "Animals", Description = "Animals Blog" };
+        //    var type4 = new Status { StatusCode = 4, Name = "Family", Description = "Family Blog" };
+        //    var type5 = new Status { StatusCode = 5, Name = "Computer", Description = "Computer Blog" };
+        //    var type6 = new Status { StatusCode = 6, Name = "Movies", Description = "Movies Blog" };
+        //    var type7 = new Status { StatusCode = 7, Name = "Phones", Description = "Phones Blog" };
+        //    var type8 = new Status { StatusCode = 8, Name = "Friend", Description = "Friend Blog" };
+        //    var type9 = new Status { StatusCode = 9, Name = "School", Description = "School Blog" };
+        //    var type10 = new Status { StatusCode = 10, Name = "College", Description = "College Blog" };
 
-            context.Statuses.AddRange(type1, type2 ,type3 ,type4 ,type5 ,type6 ,type7 ,type8 ,type9 ,type10 );
+        //    context.Statuses.AddRange(type1, type2 ,type3 ,type4 ,type5 ,type6 ,type7 ,type8 ,type9 ,type10 );
+        //    context.SaveChanges();
+        //}
+        if (!context.BlogTypes.Any())
+        {
+            var type1 = new BlogType { Status = 1, Name = "Corporate", Description = "Official company blogs" };
+            var type2 = new BlogType { Status = 2, Name = "Personal", Description = "Personal life experiences and thoughts" };
+            var type3 = new BlogType { Status = 3, Name = "Private", Description = "Restricted or confidential blogs" };
+            var type4 = new BlogType { Status = 4, Name = "Tech", Description = "Blogs about technology and development" };
+            var type5 = new BlogType { Status = 5, Name = "Travel", Description = "Travel diaries and guides" };
+            var type6 = new BlogType { Status = 6, Name = "Food", Description = "Recipes, reviews, and culinary experiences" };
+            var type7 = new BlogType { Status = 7, Name = "Education", Description = "Educational content and tutorials" };
+            var type8 = new BlogType { Status = 8, Name = "Health", Description = "Health tips and wellness guides" };
+            var type9 = new BlogType { Status = 9, Name = "Finance", Description = "Money management, investing, and budgeting" };
+            var type10 = new BlogType { Status = 10, Name = "News", Description = "Current events and updates" };
+
+
+            context.BlogTypes.AddRange(type1, type2, type3, type4, type5, type6, type7, type8, type9, type10);
             context.SaveChanges();
         }
-
-
         //var blogTypes = new List<BlogType>
 
         //{
