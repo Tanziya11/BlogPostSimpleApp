@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BlogPostSimpleApp.Models
 {
@@ -11,10 +7,12 @@ namespace BlogPostSimpleApp.Models
         public int BlogId { get; set; }
         public string Url { get; set; }
         public bool isPublic { get; set; }
+
+        // Foreign Key
+        public int BlogTypeId { get; set; }
+        public BlogType BlogType { get; set; }
+
+        // Navigation
         public List<Post> Posts { get; set; }
-        public int BlogTypeId { get; set; }    // Foreign key
-        public int StatusId { get; set; }       // Foreign key
-        public Status Status { get; set; }      // Navigation property
-        public BlogType BlogType { get; set; }      // Navigation property
     }
 }
